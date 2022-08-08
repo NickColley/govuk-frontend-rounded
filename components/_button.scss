@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@import "./base.scss";
+@import "../base.scss";
 
 $_button_padding: math.clamp(govuk-spacing(2), $_padding, $_maximum);
 

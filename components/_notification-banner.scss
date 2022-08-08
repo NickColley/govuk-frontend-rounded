@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@import "./base.scss";
+@import "../base.scss";
 
 $_banner_radius: math.floor(math.div($_border-radius, 1.3));
 
