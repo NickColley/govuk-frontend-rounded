@@ -134,7 +134,8 @@ $_border-radius: math.clamp($_minimum, $govuk-frontend-rounded, $_maximum);
     // https://design-system.service.gov.uk/components/textarea/
     ////
     .govuk-textarea {
-        padding: $_padding;
+        padding-left: $_padding;
+        padding-right: $_padding;
     }
     
     ////
