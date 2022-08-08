@@ -22,6 +22,8 @@ $govuk-frontend-rounded: 10px;
 // The rest of your SCSS...
 ```
 
+> `$govuk-frontended-rounded` must be in pixels and can only be between 2px and 20px.
+
 ## Screenshots
 
 ### Before
