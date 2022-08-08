@@ -21,3 +21,14 @@ $govuk-frontend-rounded: 10px;
 
 // The rest of your SCSS...
 ```
+
+## Screenshots
+
+### Before
+
+![Button and Text input with square corners](https://user-images.githubusercontent.com/2445413/183426656-2a59c5e8-540b-4c81-9337-ec14f3422a3e.png)
+
+### After
+![Button and Text input with rounded corners](https://user-images.githubusercontent.com/2445413/183426671-8e60e111-fe0c-46cc-ad45-99c0fd40ed79.png)
+
+[See all rounded components](https://govuk-frontend-rounded.netlify.app).
