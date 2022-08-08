@@ -1,13 +1,13 @@
 # govuk-frontend-rounded
 Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System.
 
-This project is compatible and tested with version 4.2.0 of GOV.UK Frontend.
+This project is compatible and tested with version 4.x of GOV.UK Frontend.
 
 ## Install
 
 1. Install GOV.UK Frontend and GOV.UK Frontend Rounded
 ```bash
-npm install govuk-frontend@4.2.0 govuk-frontend-rounded
+npm install govuk-frontend govuk-frontend-rounded
 ```
 
 2. Import into your project
