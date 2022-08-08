@@ -9,7 +9,7 @@ $govuk-font-family: Helvetica, Arial, sans-serif;
 
 @import "node_modules/govuk-frontend/govuk/all.scss";
 
-$govuk-frontend-rounded: 20px;
+$govuk-frontend-rounded: 10px;
 
 // Import overrides we're distributing.
 @import "all.scss";
