@@ -1,7 +1,7 @@
 {
   "name": "govuk-frontend-rounded",
   "version": "1.0.0",
-  "description": "Extension of GOV.UK Frontend to allow for rounded corners.",
+  "description": "Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System",
   "main": "index.scss",
   "scripts": {
     "start": "eleventy --serve",

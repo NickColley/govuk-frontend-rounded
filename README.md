@@ -1,5 +1,5 @@
 # govuk-frontend-rounded
-Extension of GOV.UK Frontend to allow for rounded corners.
+Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System.
 
 This project is compatible and tested with version 4.2.0 of GOV.UK Frontend.
 
