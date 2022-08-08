@@ -1,6 +1,8 @@
 # govuk-frontend-rounded
 Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System.
 
+**⚠️ Do not use for GOV.UK services. You may fail a Service Assessment. Only for use in branded projects. ⚠️**
+
 This project is compatible and tested with version 4.x of GOV.UK Frontend.
 
 ## Install
@@ -21,3 +23,16 @@ $govuk-frontend-rounded: 10px;
 
 // The rest of your SCSS...
 ```
+
+> `$govuk-frontended-rounded` must be in pixels and can only be between 2px and 20px.
+
+## Screenshots
+
+### Before
+
+![Button and Text input with square corners](https://user-images.githubusercontent.com/2445413/183426656-2a59c5e8-540b-4c81-9337-ec14f3422a3e.png)
+
+### After
+![Button and Text input with rounded corners](https://user-images.githubusercontent.com/2445413/183426671-8e60e111-fe0c-46cc-ad45-99c0fd40ed79.png)
+
+[See all rounded components](https://govuk-frontend-rounded.netlify.app).
