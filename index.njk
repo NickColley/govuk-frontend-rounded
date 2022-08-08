@@ -1,0 +1,611 @@
+{% extends "node_modules/govuk-frontend/govuk/template.njk" %}
+
+{% from "node_modules/govuk-frontend/govuk/components/accordion/macro.njk"           import govukAccordion %}
+{% from "node_modules/govuk-frontend/govuk/components/back-link/macro.njk"           import govukBackLink %}
+{% from "node_modules/govuk-frontend/govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
+{% from "node_modules/govuk-frontend/govuk/components/button/macro.njk"              import govukButton %}
+{% from "node_modules/govuk-frontend/govuk/components/character-count/macro.njk"     import govukCharacterCount %}
+{% from "node_modules/govuk-frontend/govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "node_modules/govuk-frontend/govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
+{% from "node_modules/govuk-frontend/govuk/components/date-input/macro.njk"          import govukDateInput %}
+{% from "node_modules/govuk-frontend/govuk/components/details/macro.njk"             import govukDetails %}
+{% from "node_modules/govuk-frontend/govuk/components/error-message/macro.njk"       import govukErrorMessage %}
+{% from "node_modules/govuk-frontend/govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
+{% from "node_modules/govuk-frontend/govuk/components/fieldset/macro.njk"            import govukFieldset %}
+{% from "node_modules/govuk-frontend/govuk/components/file-upload/macro.njk"         import govukFileUpload %}
+{% from "node_modules/govuk-frontend/govuk/components/input/macro.njk"               import govukInput %}
+{% from "node_modules/govuk-frontend/govuk/components/inset-text/macro.njk"          import govukInsetText %}
+{% from "node_modules/govuk-frontend/govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "node_modules/govuk-frontend/govuk/components/pagination/macro.njk"          import govukPagination %}
+{% from "node_modules/govuk-frontend/govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "node_modules/govuk-frontend/govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
+{% from "node_modules/govuk-frontend/govuk/components/radios/macro.njk"              import govukRadios %}
+{% from "node_modules/govuk-frontend/govuk/components/select/macro.njk"              import govukSelect %}
+{% from "node_modules/govuk-frontend/govuk/components/skip-link/macro.njk"           import govukSkipLink %}
+{% from "node_modules/govuk-frontend/govuk/components/summary-list/macro.njk"        import govukSummaryList %}
+{% from "node_modules/govuk-frontend/govuk/components/table/macro.njk"               import govukTable %}
+{% from "node_modules/govuk-frontend/govuk/components/tabs/macro.njk"                import govukTabs %}
+{% from "node_modules/govuk-frontend/govuk/components/tag/macro.njk"                 import govukTag %}
+{% from "node_modules/govuk-frontend/govuk/components/textarea/macro.njk"            import govukTextarea %}
+{% from "node_modules/govuk-frontend/govuk/components/warning-text/macro.njk"        import govukWarningText %}
+
+{% block head %}
+    {{ super() }}
+    {% sassFile %}
+{% endblock %}
+
+{# Remove Header and Footer #}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+    <h1 class="govuk-heading-xl">GOV.UK Frontend Rounded</h1>
+    <p class="govuk-body">Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System</p>
+    <h2 class="govuk-heading-l">Button</h2>
+    {{ govukButton({
+        text: "Save and continue"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Checkboxes</h2>
+    {{ govukInsetText({
+      text: "Checkboxes are restricted to how round they can be to avoid them looking like radios."
+    }) }}
+    {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        fieldset: {
+            legend: {
+            text: "Which types of waste do you transport?",
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        hint: {
+            text: "Select all that apply."
+        },
+        items: [
+            {
+            value: "electronics",
+            text: "Waste from electronics"
+            },
+            {
+            value: "mines",
+            text: "Waste from mines or quarries"
+            },
+            {
+            value: "farm",
+            text: "Farm or agricultural waste"
+            }
+        ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Small checkboxes</h2>
+
+    {{ govukCheckboxes({
+        idPrefix: "organisation",
+        name: "organisation",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+            legend: {
+            text: "Organisation"
+            }
+        },
+        items: [
+            {
+            value: "hmrc",
+            text: "HM Revenue and Customs (HMRC)"
+            },
+            {
+            value: "employment-tribunal",
+            text: "Employment Tribunal"
+            },
+            {
+            value: "MOD",
+            text: "Ministry of Defence"
+            },
+            {
+            value: "DfT",
+            text: "Department for Transport"
+            }
+        ]
+        }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Error summary</h2>
+    {{ govukErrorSummary({
+        disabledAutofocus: true,
+        titleText: "There is a problem",
+        errorList: [
+            {
+            text: "The date your passport was issued must be in the past",
+            href: "#passport-issued-day"
+            },
+            {
+            text: "Enter a postcode, like AA1 1AA",
+            href: "#postcode-input"
+            }
+        ]
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">File upload</h2>
+    {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
+        label: {
+            text: "Upload a file"
+        }
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Notification banner</h2>
+    {% set html %}
+        <p class="govuk-notification-banner__heading">
+            You have 7 days left to send your application.
+            <a class="govuk-notification-banner__link" href="#">View application</a>.
+        </p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+        html: html
+    }) }}
+    
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    
+    <h2 class="govuk-heading-l">Pagination</h2>
+    {{ govukPagination({
+        previous: {
+            href: "#"
+        },
+        next: {
+            href: "#"
+        },
+        items: [
+            {
+            number: 1,
+            href: "#"
+            },
+            {
+            number: 2,
+            current: true,
+            href: "#"
+            },
+            {
+            number: 3,
+            href: "#"
+            }
+        ]
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Panel</h2>
+    {{ govukPanel({
+        titleText: "Application complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Select</h2>
+    {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+            text: "Sort by"
+        },
+        items: [
+            {
+            value: "published",
+            text: "Recently published"
+            },
+            {
+            value: "updated",
+            text: "Recently updated",
+            selected: true
+            },
+            {
+            value: "views",
+            text: "Most views"
+            },
+            {
+            value: "comments",
+            text: "Most comments"
+            }
+        ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-l">Tabs</h2>
+
+        {% set pastDayHtml %}
+        <h2 class="govuk-heading-l">Past day</h2>
+        {{ govukTable({
+        head: [
+            {
+            text: "Case manager"
+            },
+            {
+            text: "Cases opened"
+            },
+            {
+            text: "Cases closed"
+            }
+        ],
+        rows: [
+            [
+            {
+                text: "David Francis"
+            },
+            {
+                text: "3"
+            },
+            {
+                text: "0"
+            }
+            ],
+            [
+            {
+                text: "Paul Farmer"
+            },
+            {
+                text: "1"
+            },
+            {
+                text: "0"
+            }
+            ],
+            [
+            {
+                text: "Rita Patel"
+            },
+            {
+                text: "2"
+            },
+            {
+                text: "0"
+            }
+            ]
+        ]
+        }) }}
+        {% endset -%}
+
+        {% set pastWeekHtml %}
+        <h2 class="govuk-heading-l">Past week</h2>
+        {{ govukTable({
+        head: [
+            {
+            text: "Case manager"
+            },
+            {
+            text: "Cases opened"
+            },
+            {
+            text: "Cases closed"
+            }
+        ],
+        rows: [
+            [
+            {
+                text: "David Francis"
+            },
+            {
+                text: "24"
+            },
+            {
+                text: "18"
+            }
+            ],
+            [
+            {
+                text: "Paul Farmer"
+            },
+            {
+                text: "16"
+            },
+            {
+                text: "20"
+            }
+            ],
+            [
+            {
+                text: "Rita Patel"
+            },
+            {
+                text: "24"
+            },
+            {
+                text: "27"
+            }
+            ]
+        ]
+        }) }}
+        {% endset -%}
+
+        {% set pastMonthHtml %}
+        <h2 class="govuk-heading-l">Past month</h2>
+        {{ govukTable({
+        head: [
+            {
+            text: "Case manager"
+            },
+            {
+            text: "Cases opened"
+            },
+            {
+            text: "Cases closed"
+            }
+        ],
+        rows: [
+            [
+            {
+                text: "David Francis"
+            },
+            {
+                text: "98"
+            },
+            {
+                text: "95"
+            }
+            ],
+            [
+            {
+                text: "Paul Farmer"
+            },
+            {
+                text: "122"
+            },
+            {
+                text: "131"
+            }
+            ],
+            [
+            {
+                text: "Rita Patel"
+            },
+            {
+                text: "126"
+            },
+            {
+                text: "142"
+            }
+            ]
+        ]
+        }) }}
+        {% endset -%}
+
+        {% set pastYearHtml %}
+        <h2 class="govuk-heading-l">Past year</h2>
+        {{ govukTable({
+        head: [
+            {
+            text: "Case manager"
+            },
+            {
+            text: "Cases opened"
+            },
+            {
+            text: "Cases closed"
+            }
+        ],
+        rows: [
+            [
+            {
+                text: "David Francis"
+            },
+            {
+                text: "1380"
+            },
+            {
+                text: "1472"
+            }
+            ],
+            [
+            {
+                text: "Paul Farmer"
+            },
+            {
+                text: "1129"
+            },
+            {
+                text: "1083"
+            }
+            ],
+            [
+            {
+                text: "Rita Patel"
+            },
+            {
+                text: "1539"
+            },
+            {
+                text: "1265"
+            }
+            ]
+        ]
+        }) }}
+        {% endset -%}
+
+        {{ govukTabs({
+        items: [
+            {
+            label: "Past day",
+            id: "past-day",
+            panel: {
+                html: pastDayHtml
+            }
+            },
+            {
+            label: "Past week",
+            id: "past-week",
+            panel: {
+                html: pastWeekHtml
+            }
+            },
+            {
+            label: "Past month",
+            id: "past-month",
+            panel: {
+                html: pastMonthHtml
+            }
+            },
+            {
+            label: "Past year",
+            id: "past-year",
+            panel: {
+                html: pastYearHtml
+            }
+            }
+        ]
+        }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Tag</h2>
+    {{ govukTag({
+    text: "completed"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Text input</h2>
+    {{ govukInput({
+        label: {
+            text: "What is the name of the event?"
+        },
+        id: "event-name",
+        name: "event-name"
+    }) }}
+
+    <h2 class="govuk-heading-m">Prefixes and suffixes</h2>
+
+    {{ govukInput({
+        id: "cost",
+        name: "cost",
+        label: {
+            text: "What is the cost in pounds?"
+        },
+        prefix: {
+            text: "£"
+        },
+        classes: "govuk-input--width-5",
+        spellcheck: false
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Weight, in kilograms"
+        },
+        classes: "govuk-input--width-5",
+        id: "weight",
+        name: "weight",
+        suffix: {
+            text: "kg"
+        },
+        spellcheck: false
+    }) }}
+
+    {{ govukInput({
+        id: "cost-per-item",
+        name: "cost-per-item",
+        label: {
+            text: "What is the cost per item, in pounds?"
+        },
+        prefix: {
+            text: "£"
+        },
+        suffix: {
+            text: "per item"
+        },
+        classes: "govuk-input--width-5",
+        spellcheck: false
+    }) }}
+
+    <h2 class="govuk-heading-m">Restricted width inputs</h2>
+
+    {{ govukInput({
+        label: {
+            text: "Width 2"
+        },
+        value: "WW",
+        classes: "govuk-input--width-2"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 3"
+        },
+        value: "WWW",
+        classes: "govuk-input--width-3"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 4"
+        },
+        value: "WWWW",
+        classes: "govuk-input--width-4"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 5"
+        },
+        value: "WWWWW",
+        classes: "govuk-input--width-5"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 10"
+        },
+        value: "WWWWWWWWWW",
+        classes: "govuk-input--width-10"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 20"
+        },
+        value: "WWWWWWWWWWWWWWWWWWWW",
+        classes: "govuk-input--width-20"
+    }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Width 30"
+        },
+        value: "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        classes: "govuk-input--width-30"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Textarea</h2>
+    {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+            text: "Can you provide more detail?",
+            classes: "govuk-label--m"
+        },
+        hint: {
+            text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+        }
+    }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+    {{ super() }}
+
+    <script type="module">
+      import { initAll } from 'https://www.unpkg.com/govuk-frontend@4.2.0/govuk-esm/all.mjs';
+      
+      initAll();
+    </script>
+{% endblock %}
