@@ -1,0 +1,12 @@
+@import "./base.scss";
+
+////
+// Error Summary
+// https://design-system.service.gov.uk/components/error-summary/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-error-summary {
+        border-radius: $_border-radius;
+    }
+}

@@ -1,0 +1,19 @@
+@import "./base.scss";
+
+////
+// Tabs
+// https://design-system.service.gov.uk/components/tabs/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-tabs__list-item:first-child {
+        border-top-left-radius: $_border-radius;
+    }
+    .govuk-tabs__list-item:last-child {
+        border-top-right-radius: $_border-radius;
+    }
+    .govuk-tabs__panel {
+        border-bottom-left-radius: $_border-radius;
+        border-bottom-right-radius: $_border-radius;
+    }
+}

@@ -1,0 +1,14 @@
+@import "./base.scss";
+
+////
+// Tag
+// https://design-system.service.gov.uk/components/tag/
+////
+ 
+@if ($_border-radius >= $_minimum) {
+    .govuk-tag {
+        border-radius: $_border-radius;
+        padding-left: $_padding;
+        padding-right: $_padding;
+    }
+}

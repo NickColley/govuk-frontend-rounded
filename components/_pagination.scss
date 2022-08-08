@@ -1,0 +1,22 @@
+@import "./base.scss";
+
+////
+// Pagination
+// https://design-system.service.gov.uk/components/panel/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-pagination__prev,
+    .govuk-pagination__next,
+    .govuk-pagination__item {
+        border-radius: $_border-radius;
+    }
+
+    .govuk-pagination__prev {
+        padding-left: $_padding;
+    }
+
+    .govuk-pagination__next {
+        padding-right: $_padding;
+    }
+}

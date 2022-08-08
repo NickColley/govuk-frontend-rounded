@@ -1,0 +1,14 @@
+@import "./base.scss";
+
+////
+// Textarea
+// https://design-system.service.gov.uk/components/textarea/
+////
+ 
+@if ($_border-radius >= $_minimum) {
+    .govuk-textarea {
+        border-radius: $_border-radius;
+        padding-left: $_padding;
+        padding-right: $_padding;
+    }
+}

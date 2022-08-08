@@ -1,0 +1,14 @@
+@import "./base.scss";
+
+////
+// Select
+// https://design-system.service.gov.uk/components/select/
+////
+ 
+@if ($_border-radius >= $_minimum) {
+    .govuk-select {
+        border-radius: $_border-radius;
+        padding-left: $_padding;
+        padding-right: $_padding;
+    }
+}

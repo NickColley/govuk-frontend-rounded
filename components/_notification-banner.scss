@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@import "./base.scss";
+
+$_banner_radius: math.floor(math.div($_border-radius, 1.3));
+
+////
+// Notification Banner
+// https://design-system.service.gov.uk/components/notification-banner/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-notification-banner {
+        border-radius: $_border-radius;
+    }
+    .govuk-notification-banner__content {
+        border-bottom-right-radius: $_banner_radius;
+        border-bottom-left-radius: $_banner_radius;
+    }
+    .govuk-notification-banner__header {
+        border-top-right-radius: $_banner_radius;
+        border-top-left-radius: $_banner_radius;
+    }
+}

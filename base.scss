@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+// Convert value to em.
+@function em($size, $base-font-size: $govuk-root-font-size) {
+    @return strip-unit($size) / strip-unit($base-font-size) * 1em;
+}
+
+$govuk-frontend-rounded: 0px !default;
+
+$_maximum: 20px;
+$_minimum: 2px;
+$_padding_ratio: 0.75;
+
+// https://github.com/alphagov/govuk-frontend/blob/main/src/govuk/components/input/_index.scss#L17
+$_default-padding: govuk-spacing(1);
+$_padding: math.clamp($_default-padding, ($_padding_ratio * $govuk-frontend-rounded), $_maximum);
+$_border-radius: math.clamp($_minimum, $govuk-frontend-rounded, $_maximum);

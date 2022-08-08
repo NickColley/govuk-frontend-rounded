@@ -1,0 +1,14 @@
+@import "./base.scss";
+
+////
+// File upload
+// https://design-system.service.gov.uk/components/file-upload/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-file-upload {
+        border-radius: $_border-radius;
+        padding-left: $_padding;
+        padding-right: $_padding;
+    }
+}

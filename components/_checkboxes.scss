@@ -1,0 +1,21 @@
+@use "sass:math";
+
+@import "./base.scss";
+
+////
+// Checkboxes
+// https://design-system.service.gov.uk/components/checkboxes/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-checkboxes__label:before {
+        // Dont use regular border-radius to avoid checkboxes
+        // looking like radios.
+        border-radius: math.clamp($_minimum, $_border-radius, 12px);
+    }
+    .govuk-checkboxes--small .govuk-checkboxes__label:before {
+        // Dont use regular border-radius to avoid checkboxes 
+        // looking like radios.
+        border-radius: math.clamp($_minimum, $_border-radius, 7px);
+    }
+}

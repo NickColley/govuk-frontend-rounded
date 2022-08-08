@@ -1,0 +1,81 @@
+@import "./base.scss";
+
+$_width-addition: 1.5 * em($_padding);
+
+////
+// Text input
+// https://design-system.service.gov.uk/components/text-input/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-input {
+        border-radius: $_border-radius;
+    }
+    .govuk-input {
+        padding-left: $_padding;
+        padding-right: $_padding;
+    }
+    .govuk-input__prefix {
+        border-top-left-radius: $_border-radius;
+        border-bottom-left-radius: $_border-radius;
+    }
+    .govuk-input__prefix {
+        padding-left: $_padding;
+    }
+    // If a text input is before a suffix.
+    .govuk-input:nth-last-child(2) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding-right: $_default-padding;
+    }
+
+    // If a text input is with only a prefix
+    .govuk-input__prefix + .govuk-input:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: $_default-padding;
+    }
+    // If a text input is in-between a prefix and suffix.
+    .govuk-input__prefix + .govuk-input:nth-last-child(2) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: $_default-padding;
+    }
+
+    .govuk-input__suffix {
+        border-top-right-radius: $_border-radius;
+        border-bottom-right-radius: $_border-radius;
+    }
+    .govuk-input__suffix {
+        padding-right: $_padding;
+    }
+
+    // Adjust width classes
+    .govuk-input--width-30 {
+        max-width: 29.5em + $_width-addition;
+    }
+
+    .govuk-input--width-20 {
+        max-width: 20.5em + $_width-addition;
+    }
+
+    .govuk-input--width-10 {
+        max-width: 11.5em + $_width-addition;
+    }
+
+    .govuk-input--width-5 {
+        max-width: 5.5em + $_width-addition;
+    }
+
+    .govuk-input--width-4 {
+        max-width: 4.5em + $_width-addition;
+    }
+
+    .govuk-input--width-3 {
+        max-width: 3.75em + $_width-addition;
+    }
+
+    .govuk-input--width-2 {
+        max-width: 2.75em + $_width-addition;
+    }
+}

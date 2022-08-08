@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@import "./base.scss";
+
+$_button_padding: math.clamp(govuk-spacing(2), $_padding, $_maximum);
+
+////
+// Button
+// https://design-system.service.gov.uk/components/button/
+////
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-button {
+        border-radius: $_border-radius;
+        padding-left: $_button_padding;
+        padding-right: $_button_padding;
+    }
+}

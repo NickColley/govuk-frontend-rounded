@@ -1,0 +1,12 @@
+@import "./base.scss";
+
+////
+// Panel
+// https://design-system.service.gov.uk/components/panel/
+////
+ 
+@if ($_border-radius >= $_minimum) {
+    .govuk-panel {
+        border-radius: $_border-radius;
+    }
+}
