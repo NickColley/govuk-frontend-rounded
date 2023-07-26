@@ -26,6 +26,6 @@
     "govuk-frontend": "^4.7.0"
   },
   "peerDependencies": {
-    "govuk-frontend": "4.7.x"
+    "govuk-frontend": "4.x"
   }
 }
