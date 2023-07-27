@@ -1,4 +1,7 @@
 # govuk-frontend-rounded
+
+[![npm version](https://img.shields.io/npm/v/govuk-frontend-rounded.svg)](http://npm.im/govuk-frontend-rounded)
+
 Rounded corners for GOV.UK Frontend, useful when branding the GOV.UK Design System.
 
 **⚠️ Do not use for GOV.UK services. You may fail a Service Assessment. Only for use in branded projects. ⚠️**
