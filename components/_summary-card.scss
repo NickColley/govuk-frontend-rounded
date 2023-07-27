@@ -1,0 +1,12 @@
+@import "../base.scss";
+
+@if ($_border-radius >= $_minimum) {
+    .govuk-summary-card {
+        border-radius: $_border-radius;
+
+        .govuk-summary-card__title-wrapper {
+            border-top-left-radius: $_border-radius;
+            border-top-right-radius: $_border-radius;
+        }
+    }
+}
