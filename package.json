@@ -18,12 +18,12 @@
   },
   "homepage": "https://gthub.com/NickColley/govuk-frontend-rounded#readme",
   "engines": {
-    "node": "~16.14.2"
+    "node": ">=16.14.2 <21.0.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.1",
+    "@11ty/eleventy": "2.0.1",
     "eleventy-plugin-dart-sass": "1.0.3",
-    "govuk-frontend": "^4.7.0"
+    "govuk-frontend": "^4.x"
   },
   "peerDependencies": {
     "govuk-frontend": "4.x"
