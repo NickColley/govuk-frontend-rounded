@@ -18,7 +18,7 @@ $_maximum: 20px;
 $_minimum: 2px;
 $_padding_ratio: 0.75;
 
-// https://github.com/alphagov/govuk-frontend/blob/main/src/govuk/components/input/_index.scss#L17
+// https://github.com/alphagov/govuk-frontend/blob/48d15230ba99695912b2120f77703383f1b7ba0f/packages/govuk-frontend/src/govuk/components/input/_index.scss#L13
 $_default-padding: govuk-spacing(1);
 $_padding: math.clamp($_default-padding, ($_padding_ratio * $govuk-frontend-rounded), $_maximum);
 $_border-radius: math.clamp($_minimum, $govuk-frontend-rounded, $_maximum);
