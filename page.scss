@@ -1,4 +1,4 @@
-@import "node_modules/govuk-frontend/govuk/base.scss";
+@import "node_modules/govuk-frontend/dist/govuk/base";
 
 // We're not using the GOV.UK Footer so set 
 // the entire page to the body background colour.
@@ -7,7 +7,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 // We can't use the GDS Transport font on non-GOV.UK pages.
 $govuk-font-family: Helvetica, Arial, sans-serif;
 
-@import "node_modules/govuk-frontend/govuk/all.scss";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 $govuk-frontend-rounded: 10px;
 
